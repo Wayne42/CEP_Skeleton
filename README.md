@@ -9,7 +9,7 @@ I use VS Code, Windows 10 and Premiere Pro 2022.
 Download the CEP_Skeleton and move it to your Adobe CEP Extensions directory.
 (C:\Program Files (x86)\Common Files\Adobe\CEP\extensions)
 
-Set your registry variables (you can use the provided bash script) and start Premiere Pro.
+Set your registry variables (you can use the provided bash script, you may need to restart your computer) and start Premiere Pro.
 
 Click on "window" and navigate to "extensions". 
 You will see your plugin. Click on it to open and use it. 
