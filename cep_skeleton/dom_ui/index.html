@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+/*************************************************************************
+* ADOBE CONFIDENTIAL
+* ___________________
+*
+* Copyright 2020 Adobe
+* All Rights Reserved.
+*
+* NOTICE: Adobe permits you to use, modify, and distribute this file in
+* accordance with the terms of the Adobe license agreement accompanying
+* it. If you have received this file from a source other than Adobe,
+* then your use, modification, or distribution of it requires the prior
+* written permission of Adobe. 
+**************************************************************************/
+-->
+<html>
+  <title>PProPanel Skeleton</title>
+  <head>
+    <meta charset="utf-8" />
+    <script src="./ext.js"></script>
+    <script src="./lib/CSInterface.js"></script>
+    <script src="./lib/jquery-1.9.1.js"></script>
+    <script src="./lib/Vulcan.js"></script>
+    <link id="ppstyle" href="css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body onLoad="onLoaded()" data-step="0">
+    <!-- Branding -->
+    <div
+      style="
+        font-size: 8px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: right !important;
+        z-index: 99;
+      "
+    >
+      <b
+        >muse prototype for -
+        <p id="username" style="text-align: inherit; display: inline">
+          [username uninitialized]
+        </p></b
+      >
+      <p id="version_string" style="text-align: inherit">
+        [version uninitialized]
+      </p>
+      <p id="active_seq" style="text-align: inherit">[seq uninitialized]</p>
+      <p id="proxies_on" style="text-align: inherit; display: none">
+        Proxies enabled for sequence:
+      </p>
+      <a href="javascript:history.go(0)">Refresh panel</a>
+    </div>
+  
+    <script>
+      document.body.onbeforeunload = function () {
+        var csInterface = new CSInterface();
+        var OSVersion = csInterface.getOSInformation();
+        var appVersion = csInterface.hostEnvironment.appVersion;
+        var versionAsFloat = parseFloat(appVersion);
+
+        csInterface.evalScript("$._PPP_.closeLog()");
+
+        if (versionAsFloat < 10.3) {
+          var path =
+            "file:///Library/Application Support/Adobe/CEP/extensions/PProPanel/payloads/onbeforeunload.html";
+
+          if (OSVersion.indexOf("Windows") >= 0) {
+            path =
+              "file:///C:/Program%20Files%20(x86)/Common%20Files/Adobe/CEP/extensions/PProPanel/payloads/onbeforeunload.html";
+          }
+          csInterface.openURLInDefaultBrowser(path);
+        }
+      };
+    </script>
+  </body>
+</html>
