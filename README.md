@@ -1,6 +1,10 @@
 # CEP_Skeleton
 Premiere Pro Plugin Skeleton (CEP) with Typescript Autocompletion for a better workflow. 
 
+## Why use this Skeleton?
+It was a huge pain to develop for Premiere Pro, so I wanted to share my current setup to save others some time setting up their environment. :)
+I use VS Code, Windows 10 and Premiere Pro 2022. 
+
 ## How to use
 Download the CEP_Skeleton and move it to your Adobe CEP Extensions directory.
 (C:\Program Files (x86)\Common Files\Adobe\CEP\extensions)
