@@ -14,3 +14,10 @@ To debug, use Chrome and navigate to "localhost:7777".
 
 You can set breakpoints in VS Code to find runtime bugs/errors. 
 
+## Reference
+
+See: 
+https://github.com/Adobe-CEP/CEP-Resources
+
+
+### Pray that UXP gets released for Premiere Pro with a decent documentation :) 
